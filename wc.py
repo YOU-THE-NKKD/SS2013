@@ -1,8 +1,12 @@
 import sys
+import re
 
-f = sys.stdin
+f = open(sys.argv[1], "rU")
+
 s = f.read()
 f.close()
+s = re.sub(r'(\n|\t|"!"|"?")', ' ', s)
+s = s.lower()
 
 words = s.split()
 
